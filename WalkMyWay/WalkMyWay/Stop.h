@@ -2,4 +2,5 @@
 
 @interface Stop : _Stop {}
 // Custom logic goes here.
+
 @end

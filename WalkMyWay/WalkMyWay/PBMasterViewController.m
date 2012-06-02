@@ -115,9 +115,8 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Route" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
-    NSPredicate *onSundays = [NSPredicate predicateWithFormat:@"1 IN trips.service.sundays"];
-        
-    [fetchRequest setPredicate:onSundays];
+    //NSPredicate *onSundays = [NSPredicate predicateWithFormat:@"1 IN trips.service.sundays"];
+    //[fetchRequest setPredicate:onSundays];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];

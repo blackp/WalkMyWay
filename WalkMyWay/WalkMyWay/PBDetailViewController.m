@@ -7,8 +7,10 @@
 //
 
 #import "PBDetailViewController.h"
+#import "PBFinalStopAnnotation.h"
 
 #define MIN_DELTA_DEGREES 0.005
+#define MAX_DEGREES_NEARBY_STOP 0.002
 
 @interface PBDetailViewController ()
 - (void)configureView;
@@ -36,6 +38,13 @@
         } else {
             [stops removeAllObjects];
         }
+        if (!finalStops) {
+            finalStops = [[NSMutableSet alloc] initWithObjects:nil];
+        } else {
+            [finalStops removeAllObjects];
+        }
+        finalStopAnnotations = nil;
+        filteredTrips = (NSMutableSet *) [self.detailItem.trips mutableCopy];
         
         for (int i = 0; i < [trips count]; i++) {
             Trip *trip = [trips objectAtIndex:i];
@@ -48,10 +57,15 @@
                         [stops addObject:scheduledStop.stop];
                     }
                 }
+                Stop *finalStop = [trip finalStop];
+                if (![finalStops containsObject:finalStop]) {
+                    [finalStops addObject:finalStop];
+                    //NSLog(@"Adding final stop %@", finalStop.name);
+                }
             }
         }
         
-        NSLog(@"Found %d scheduled stops", stops.count);
+        NSLog(@"Found %d scheduled stops (%d final) ", stops.count, finalStops.count);
         
         recordingLocation = FALSE;
         
@@ -75,12 +89,25 @@
         }
     }
     
+    if (mapView && !finalStopAnnotations) {
+        finalStopAnnotations = [[NSMutableArray alloc] initWithObjects: nil];
+        NSArray *finalStopsArray = [finalStops allObjects];
+        for (NSInteger i = 0; i < finalStopsArray.count; i += 1) {
+            Stop *finalStop = [finalStopsArray objectAtIndex:i];
+            CLLocationCoordinate2D finalStopLocation = CLLocationCoordinate2DMake(finalStop.latitudeValue, finalStop.longitudeValue);
+            PBFinalStopAnnotation *stopAnnotation = [[PBFinalStopAnnotation alloc] initWithTitle:finalStop.name andCoordinate:finalStopLocation];
+            [mapView addAnnotation:stopAnnotation];
+            [finalStopAnnotations addObject: stopAnnotation];
+        }
+    }
+
     [self updateMapRegionForStops:[stops allObjects]];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [mapView setDelegate:self];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
@@ -237,12 +264,87 @@
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
-    if (!crumbView)
-    {
-        crumbView = [[CrumbPathView alloc] initWithOverlay:overlay];
+    if ([overlay isKindOfClass:[PBTripMap class]]) {
+        if (!tripMapView) {
+            tripMapView = [[PBTripMapView alloc] initWithOverlay:overlay];
+        }
+        return tripMapView;
     }
-    return crumbView;
+    
+    if ([overlay isKindOfClass:[CrumbPath class]]) {
+        if (!crumbView)
+        {
+            crumbView = [[CrumbPathView alloc] initWithOverlay:overlay];
+        }
+        return crumbView;
+    }
+
+    NSLog(@"Error no matching overlay class.");
+    return nil;
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)mv
+            viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // If it's the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    // Handle any custom annotations.
+    if ([annotation isKindOfClass:[PBFinalStopAnnotation class]])
+    {
+        // Try to dequeue an existing pin view first.
+        MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mv dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        if (!pinView)
+        {
+            // If an existing pin view was not available, create one.
+            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotation"];
+            pinView.pinColor = MKPinAnnotationColorRed;
+            pinView.animatesDrop = YES;
+            pinView.canShowCallout = YES;
+            // Add a detail disclosure button to the callout.
+            UIButton* rightButton = [UIButton buttonWithType:
+                                     UIButtonTypeContactAdd];
+            //[rightButton addTarget:self action:@selector(annotationCallout:)
+            //      forControlEvents:UIControlEventTouchUpInside];
+            pinView.rightCalloutAccessoryView = rightButton;
+            pinView.annotation = annotation;
+        }
+        else
+            pinView.annotation = annotation;
+        return pinView;
+    }
+    return nil; 
+}
 
+- (void)mapView:(MKMapView *)mv annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    NSLog(@"Annotation callout!");
+    
+    NSArray *potentialTrips = [filteredTrips allObjects];
+    Trip *trip;
+    for (NSInteger i = 0; i < potentialTrips.count; i += 1) {
+        trip = [potentialTrips objectAtIndex:i];
+        CLLocationCoordinate2D finalStopLocation = CLLocationCoordinate2DMake(trip.finalStop.latitudeValue, trip.finalStop.longitudeValue);
+        PBFinalStopAnnotation *annotation = view.annotation;
+        if (fabs(annotation.coordinate.latitude - finalStopLocation.latitude) > MAX_DEGREES_NEARBY_STOP || 
+            fabs(annotation.coordinate.longitude - finalStopLocation.longitude) > MAX_DEGREES_NEARBY_STOP) {
+            [filteredTrips removeObject:trip];
+            [finalStops removeObject:trip.finalStop];
+        }
+    }
+    
+    NSLog(@"Found %d scheduled stops (%d final) for %d trips", stops.count, finalStops.count, filteredTrips.count);
+
+    potentialTrips = [filteredTrips allObjects];
+    if (potentialTrips.count > 0) {
+        trip = [potentialTrips objectAtIndex:0];
+        NSLog(@"Tripp: %@", trip.route.name);
+        tripMap = [[PBTripMap alloc] initWithTrip:trip];
+        [mapView addOverlay:tripMap];
+    }
+
+    [mapView removeAnnotations: finalStopAnnotations];
+    
+}
+    
 @end

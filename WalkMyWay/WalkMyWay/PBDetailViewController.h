@@ -11,6 +11,8 @@
 #import "ModelTypes.h"
 #import "CrumbPath.h"
 #import "CrumbPathView.h"
+#import "PBTripMap.h"
+#import "PBTripMapView.h"
 
 @interface PBDetailViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -18,12 +20,19 @@
 @private 
     CrumbPath *crumbs;
     CrumbPathView *crumbView;
+    PBTripMap *tripMap;
+    PBTripMapView *tripMapView;
     BOOL recordingLocation;
     NSMutableSet *stops;
+    NSMutableSet *finalStops;
+    NSMutableArray *finalStopAnnotations;
+    NSMutableSet *filteredTrips; // All the trips that haven't been filtered out by user selection of final stops
 }
 
 @property (strong, nonatomic) Route *detailItem;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+
 
 @property (strong) CLLocationManager *locationManager;
 @property (strong) CLLocation *currentLocation;

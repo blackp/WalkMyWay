@@ -80,6 +80,9 @@
 		D431DB501579EB910096D203 /* CrumbPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB4C1579EB900096D203 /* CrumbPath.m */; };
 		D431DB511579EB910096D203 /* CrumbPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB4E1579EB910096D203 /* CrumbPathView.m */; };
 		D431DB521579EB910096D203 /* CrumbPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB4E1579EB910096D203 /* CrumbPathView.m */; };
+		D4C22A4F157A1CD7000B251C /* PBFinalStopAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C22A4E157A1CD7000B251C /* PBFinalStopAnnotation.m */; };
+		D4C22A53157A2D0C000B251C /* PBTripMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C22A52157A2D0C000B251C /* PBTripMapView.m */; };
+		D4C22A56157A2D8F000B251C /* PBTripMap.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C22A55157A2D8F000B251C /* PBTripMap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +162,12 @@
 		D431DB4C1579EB900096D203 /* CrumbPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrumbPath.m; sourceTree = "<group>"; };
 		D431DB4D1579EB900096D203 /* CrumbPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrumbPathView.h; sourceTree = "<group>"; };
 		D431DB4E1579EB910096D203 /* CrumbPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrumbPathView.m; sourceTree = "<group>"; };
+		D4C22A4D157A1CD7000B251C /* PBFinalStopAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFinalStopAnnotation.h; sourceTree = "<group>"; };
+		D4C22A4E157A1CD7000B251C /* PBFinalStopAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFinalStopAnnotation.m; sourceTree = "<group>"; };
+		D4C22A51157A2D0C000B251C /* PBTripMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBTripMapView.h; sourceTree = "<group>"; };
+		D4C22A52157A2D0C000B251C /* PBTripMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBTripMapView.m; sourceTree = "<group>"; };
+		D4C22A54157A2D8F000B251C /* PBTripMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBTripMap.h; sourceTree = "<group>"; };
+		D4C22A55157A2D8F000B251C /* PBTripMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBTripMap.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,8 +234,12 @@
 		D4233A231578EFD9009C3D03 /* WalkMyWay */ = {
 			isa = PBXGroup;
 			children = (
+				D4C22A54157A2D8F000B251C /* PBTripMap.h */,
+				D4C22A55157A2D8F000B251C /* PBTripMap.m */,
 				D431DB4B1579EB8F0096D203 /* CrumbPath.h */,
 				D431DB4C1579EB900096D203 /* CrumbPath.m */,
+				D4C22A51157A2D0C000B251C /* PBTripMapView.h */,
+				D4C22A52157A2D0C000B251C /* PBTripMapView.m */,
 				D431DB4D1579EB900096D203 /* CrumbPathView.h */,
 				D431DB4E1579EB910096D203 /* CrumbPathView.m */,
 				D431DB481579DE0B0096D203 /* ModelTypes.h */,
@@ -237,6 +250,8 @@
 				D4233A361578EFD9009C3D03 /* PBMasterViewController.m */,
 				D4233A381578EFD9009C3D03 /* PBDetailViewController.h */,
 				D4233A391578EFD9009C3D03 /* PBDetailViewController.m */,
+				D4C22A4D157A1CD7000B251C /* PBFinalStopAnnotation.h */,
+				D4C22A4E157A1CD7000B251C /* PBFinalStopAnnotation.m */,
 				D4233A321578EFD9009C3D03 /* WalkMyWay.xcdatamodeld */,
 				D431DB001579BAC60096D203 /* _Agency.h */,
 				D431DB011579BAC60096D203 /* _Agency.m */,
@@ -456,6 +471,9 @@
 				D431DB461579BACA0096D203 /* WayPoint.m in Sources */,
 				D431DB4F1579EB910096D203 /* CrumbPath.m in Sources */,
 				D431DB511579EB910096D203 /* CrumbPathView.m in Sources */,
+				D4C22A4F157A1CD7000B251C /* PBFinalStopAnnotation.m in Sources */,
+				D4C22A53157A2D0C000B251C /* PBTripMapView.m in Sources */,
+				D4C22A56157A2D8F000B251C /* PBTripMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +697,7 @@
 				D431DAFE1579B8EC0096D203 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

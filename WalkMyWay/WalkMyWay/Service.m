@@ -41,7 +41,8 @@
     
     // FIXME: Modify the result according to any service exceptions.
     
-    return result;
+    //return result;
+    return TRUE;
 }
 
 @end

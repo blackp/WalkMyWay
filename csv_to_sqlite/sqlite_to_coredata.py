@@ -73,13 +73,23 @@ for row in gt_cursor:
     wmw_cursor.execute("INSERT INTO ZSTOP (Z_ENT, Z_OPT, ZLATITUDE, ZLONGITUDE, ZNAME) VALUES (?, ?, ?, ?, ?)", values)
     pk["Stop"][id] = wmw_cursor.lastrowid
 
-gt_cursor.execute("SELECT shape_id, shape_pt_lat, shape_pt_lon, shape_pt_sequence FROM shapes")
+sequence_number_dict = {}
+gt_cursor.execute("SELECT shape_id, shape_pt_lat, shape_pt_lon FROM shapes")
 for row in gt_cursor:
-    trip_map_id_gt, lat, lng, sequence_number = row
+    trip_map_id_gt, lat, lng = row
     if trip_map_id_gt not in pk["TripMap"].keys():
+        sequence_number = 0
+        sequence_number_dict[trip_map_id_gt] = 0
         values = (entity_dict["TripMap"], 1)
         wmw_cursor.execute("INSERT INTO ZTRIPMAP (Z_ENT, Z_OPT) VALUES (?, ?)", values)
         pk["TripMap"][trip_map_id_gt] = wmw_cursor.lastrowid
+
+    if sequence_number_dict.has_key(trip_map_id_gt):
+        sequence_number_dict[trip_map_id_gt] += 1
+    else:
+        sequence_number_dict[trip_map_id_gt] = 0
+
+    sequence_number = sequence_number_dict[trip_map_id_gt]
 
     trip_map_id = pk["TripMap"][trip_map_id_gt]
     values = (entity_dict["WayPoint"], 1, sequence_number, trip_map_id, lat, lng)
@@ -110,7 +120,7 @@ for row in gt_cursor:
     trip_id = pk["Trip"][trip_id_gt]
     stop_id = pk["Stop"][stop_id_gt]
 
-    values = (entity_dict["ScheduledStop"], 1, stop_sequence, stop_id, trip_id, arrival_time, departure_time)
+    values = (entity_dict["ScheduledStop"], 1, stop_sequence - 1, stop_id, trip_id, arrival_time, departure_time)
     wmw_cursor.execute("INSERT INTO ZSCHEDULEDSTOP (Z_ENT, Z_OPT, ZSEQUENCENUMBER, ZSTOP, ZTRIP, ZARRIVALTIME, ZDEPARTURETIME) VALUES (?, ?, ?, ?, ?, ?, ?)", values)
     scheduled_stop_pk = wmw_cursor.lastrowid
     pk["ScheduledStop"][scheduled_stop_pk] = scheduled_stop_pk
