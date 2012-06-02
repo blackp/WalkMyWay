@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		D431DAFB1579B8EC0096D203 /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D431DAFC1579B8EC0096D203 /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				D431DAFF1579B9130096D203 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		D4233A1C1578EFD9009C3D03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4233A1B1578EFD9009C3D03 /* UIKit.framework */; };
+		D4233A1E1578EFD9009C3D03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4233A1D1578EFD9009C3D03 /* Foundation.framework */; };
+		D4233A201578EFD9009C3D03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4233A1F1578EFD9009C3D03 /* CoreGraphics.framework */; };
+		D4233A221578EFD9009C3D03 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4233A211578EFD9009C3D03 /* CoreData.framework */; };
+		D4233A281578EFD9009C3D03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4233A261578EFD9009C3D03 /* InfoPlist.strings */; };
+		D4233A2A1578EFD9009C3D03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4233A291578EFD9009C3D03 /* main.m */; };
+		D4233A2E1578EFD9009C3D03 /* PBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4233A2D1578EFD9009C3D03 /* PBAppDelegate.m */; };
+		D4233A311578EFD9009C3D03 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4233A2F1578EFD9009C3D03 /* MainStoryboard.storyboard */; };
+		D4233A341578EFD9009C3D03 /* WalkMyWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4233A321578EFD9009C3D03 /* WalkMyWay.xcdatamodeld */; };
+		D4233A371578EFD9009C3D03 /* PBMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4233A361578EFD9009C3D03 /* PBMasterViewController.m */; };
+		D4233A3A1578EFD9009C3D03 /* PBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4233A391578EFD9009C3D03 /* PBDetailViewController.m */; };
+		D4233A421578EFDA009C3D03 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4233A411578EFDA009C3D03 /* SenTestingKit.framework */; };
+		D4233A431578EFDA009C3D03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4233A1B1578EFD9009C3D03 /* UIKit.framework */; };
+		D4233A441578EFDA009C3D03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4233A1D1578EFD9009C3D03 /* Foundation.framework */; };
+		D4233A451578EFDA009C3D03 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4233A211578EFD9009C3D03 /* CoreData.framework */; };
+		D4233A4D1578EFDA009C3D03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4233A4B1578EFDA009C3D03 /* InfoPlist.strings */; };
+		D4233A501578EFDA009C3D03 /* WalkMyWayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4233A4F1578EFDA009C3D03 /* WalkMyWayTests.m */; };
+		D431DAF91579A8530096D203 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D431DAF81579A8530096D203 /* MapKit.framework */; };
+		D431DB241579BACA0096D203 /* _Agency.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB011579BAC60096D203 /* _Agency.m */; };
+		D431DB251579BACA0096D203 /* _Agency.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB011579BAC60096D203 /* _Agency.m */; };
+		D431DB261579BACA0096D203 /* _Route.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB031579BAC70096D203 /* _Route.m */; };
+		D431DB271579BACA0096D203 /* _Route.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB031579BAC70096D203 /* _Route.m */; };
+		D431DB281579BACA0096D203 /* _ScheduledStop.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB051579BAC70096D203 /* _ScheduledStop.m */; };
+		D431DB291579BACA0096D203 /* _ScheduledStop.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB051579BAC70096D203 /* _ScheduledStop.m */; };
+		D431DB2A1579BACA0096D203 /* _Service.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB071579BAC70096D203 /* _Service.m */; };
+		D431DB2B1579BACA0096D203 /* _Service.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB071579BAC70096D203 /* _Service.m */; };
+		D431DB2C1579BACA0096D203 /* _ServiceException.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB091579BAC70096D203 /* _ServiceException.m */; };
+		D431DB2D1579BACA0096D203 /* _ServiceException.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB091579BAC70096D203 /* _ServiceException.m */; };
+		D431DB2E1579BACA0096D203 /* _Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB0B1579BAC70096D203 /* _Stop.m */; };
+		D431DB2F1579BACA0096D203 /* _Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB0B1579BAC70096D203 /* _Stop.m */; };
+		D431DB301579BACA0096D203 /* _Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB0D1579BAC80096D203 /* _Trip.m */; };
+		D431DB311579BACA0096D203 /* _Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB0D1579BAC80096D203 /* _Trip.m */; };
+		D431DB321579BACA0096D203 /* _TripMap.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB0F1579BAC80096D203 /* _TripMap.m */; };
+		D431DB331579BACA0096D203 /* _TripMap.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB0F1579BAC80096D203 /* _TripMap.m */; };
+		D431DB341579BACA0096D203 /* _WayPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB111579BAC80096D203 /* _WayPoint.m */; };
+		D431DB351579BACA0096D203 /* _WayPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB111579BAC80096D203 /* _WayPoint.m */; };
+		D431DB361579BACA0096D203 /* Agency.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB131579BAC80096D203 /* Agency.m */; };
+		D431DB371579BACA0096D203 /* Agency.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB131579BAC80096D203 /* Agency.m */; };
+		D431DB381579BACA0096D203 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB151579BAC80096D203 /* Route.m */; };
+		D431DB391579BACA0096D203 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB151579BAC80096D203 /* Route.m */; };
+		D431DB3A1579BACA0096D203 /* ScheduledStop.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB171579BAC90096D203 /* ScheduledStop.m */; };
+		D431DB3B1579BACA0096D203 /* ScheduledStop.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB171579BAC90096D203 /* ScheduledStop.m */; };
+		D431DB3C1579BACA0096D203 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB191579BAC90096D203 /* Service.m */; };
+		D431DB3D1579BACA0096D203 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB191579BAC90096D203 /* Service.m */; };
+		D431DB3E1579BACA0096D203 /* ServiceException.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB1B1579BAC90096D203 /* ServiceException.m */; };
+		D431DB3F1579BACA0096D203 /* ServiceException.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB1B1579BAC90096D203 /* ServiceException.m */; };
+		D431DB401579BACA0096D203 /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB1D1579BAC90096D203 /* Stop.m */; };
+		D431DB411579BACA0096D203 /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB1D1579BAC90096D203 /* Stop.m */; };
+		D431DB421579BACA0096D203 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB1F1579BAC90096D203 /* Trip.m */; };
+		D431DB431579BACA0096D203 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB1F1579BAC90096D203 /* Trip.m */; };
+		D431DB441579BACA0096D203 /* TripMap.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB211579BAC90096D203 /* TripMap.m */; };
+		D431DB451579BACA0096D203 /* TripMap.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB211579BAC90096D203 /* TripMap.m */; };
+		D431DB461579BACA0096D203 /* WayPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB231579BAC90096D203 /* WayPoint.m */; };
+		D431DB471579BACA0096D203 /* WayPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB231579BAC90096D203 /* WayPoint.m */; };
+		D431DB4A1579E8070096D203 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D431DB491579E8070096D203 /* CoreLocation.framework */; };
+		D431DB4F1579EB910096D203 /* CrumbPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB4C1579EB900096D203 /* CrumbPath.m */; };
+		D431DB501579EB910096D203 /* CrumbPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB4C1579EB900096D203 /* CrumbPath.m */; };
+		D431DB511579EB910096D203 /* CrumbPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB4E1579EB910096D203 /* CrumbPathView.m */; };
+		D431DB521579EB910096D203 /* CrumbPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = D431DB4E1579EB910096D203 /* CrumbPathView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4233A461578EFDA009C3D03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4233A0E1578EFD9009C3D03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4233A161578EFD9009C3D03;
+			remoteInfo = WalkMyWay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4233A171578EFD9009C3D03 /* WalkMyWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkMyWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4233A1B1578EFD9009C3D03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D4233A1D1578EFD9009C3D03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D4233A1F1578EFD9009C3D03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D4233A211578EFD9009C3D03 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D4233A251578EFD9009C3D03 /* WalkMyWay-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WalkMyWay-Info.plist"; sourceTree = "<group>"; };
+		D4233A271578EFD9009C3D03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4233A291578EFD9009C3D03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D4233A2B1578EFD9009C3D03 /* WalkMyWay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WalkMyWay-Prefix.pch"; sourceTree = "<group>"; };
+		D4233A2C1578EFD9009C3D03 /* PBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBAppDelegate.h; sourceTree = "<group>"; };
+		D4233A2D1578EFD9009C3D03 /* PBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBAppDelegate.m; sourceTree = "<group>"; };
+		D4233A301578EFD9009C3D03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		D4233A331578EFD9009C3D03 /* WalkMyWay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WalkMyWay.xcdatamodel; sourceTree = "<group>"; };
+		D4233A351578EFD9009C3D03 /* PBMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBMasterViewController.h; sourceTree = "<group>"; };
+		D4233A361578EFD9009C3D03 /* PBMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBMasterViewController.m; sourceTree = "<group>"; };
+		D4233A381578EFD9009C3D03 /* PBDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBDetailViewController.h; sourceTree = "<group>"; };
+		D4233A391578EFD9009C3D03 /* PBDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBDetailViewController.m; sourceTree = "<group>"; };
+		D4233A401578EFDA009C3D03 /* WalkMyWayTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkMyWayTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4233A411578EFDA009C3D03 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D4233A4A1578EFDA009C3D03 /* WalkMyWayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WalkMyWayTests-Info.plist"; sourceTree = "<group>"; };
+		D4233A4C1578EFDA009C3D03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4233A4E1578EFDA009C3D03 /* WalkMyWayTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalkMyWayTests.h; sourceTree = "<group>"; };
+		D4233A4F1578EFDA009C3D03 /* WalkMyWayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalkMyWayTests.m; sourceTree = "<group>"; };
+		D431DAF81579A8530096D203 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D431DB001579BAC60096D203 /* _Agency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Agency.h; sourceTree = "<group>"; };
+		D431DB011579BAC60096D203 /* _Agency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Agency.m; sourceTree = "<group>"; };
+		D431DB021579BAC60096D203 /* _Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Route.h; sourceTree = "<group>"; };
+		D431DB031579BAC70096D203 /* _Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Route.m; sourceTree = "<group>"; };
+		D431DB041579BAC70096D203 /* _ScheduledStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _ScheduledStop.h; sourceTree = "<group>"; };
+		D431DB051579BAC70096D203 /* _ScheduledStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _ScheduledStop.m; sourceTree = "<group>"; };
+		D431DB061579BAC70096D203 /* _Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Service.h; sourceTree = "<group>"; };
+		D431DB071579BAC70096D203 /* _Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Service.m; sourceTree = "<group>"; };
+		D431DB081579BAC70096D203 /* _ServiceException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _ServiceException.h; sourceTree = "<group>"; };
+		D431DB091579BAC70096D203 /* _ServiceException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _ServiceException.m; sourceTree = "<group>"; };
+		D431DB0A1579BAC70096D203 /* _Stop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Stop.h; sourceTree = "<group>"; };
+		D431DB0B1579BAC70096D203 /* _Stop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Stop.m; sourceTree = "<group>"; };
+		D431DB0C1579BAC70096D203 /* _Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Trip.h; sourceTree = "<group>"; };
+		D431DB0D1579BAC80096D203 /* _Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Trip.m; sourceTree = "<group>"; };
+		D431DB0E1579BAC80096D203 /* _TripMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TripMap.h; sourceTree = "<group>"; };
+		D431DB0F1579BAC80096D203 /* _TripMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TripMap.m; sourceTree = "<group>"; };
+		D431DB101579BAC80096D203 /* _WayPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _WayPoint.h; sourceTree = "<group>"; };
+		D431DB111579BAC80096D203 /* _WayPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _WayPoint.m; sourceTree = "<group>"; };
+		D431DB121579BAC80096D203 /* Agency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agency.h; sourceTree = "<group>"; };
+		D431DB131579BAC80096D203 /* Agency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agency.m; sourceTree = "<group>"; };
+		D431DB141579BAC80096D203 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		D431DB151579BAC80096D203 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		D431DB161579BAC90096D203 /* ScheduledStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledStop.h; sourceTree = "<group>"; };
+		D431DB171579BAC90096D203 /* ScheduledStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledStop.m; sourceTree = "<group>"; };
+		D431DB181579BAC90096D203 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		D431DB191579BAC90096D203 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		D431DB1A1579BAC90096D203 /* ServiceException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceException.h; sourceTree = "<group>"; };
+		D431DB1B1579BAC90096D203 /* ServiceException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceException.m; sourceTree = "<group>"; };
+		D431DB1C1579BAC90096D203 /* Stop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stop.h; sourceTree = "<group>"; };
+		D431DB1D1579BAC90096D203 /* Stop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stop.m; sourceTree = "<group>"; };
+		D431DB1E1579BAC90096D203 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		D431DB1F1579BAC90096D203 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		D431DB201579BAC90096D203 /* TripMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripMap.h; sourceTree = "<group>"; };
+		D431DB211579BAC90096D203 /* TripMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripMap.m; sourceTree = "<group>"; };
+		D431DB221579BAC90096D203 /* WayPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WayPoint.h; sourceTree = "<group>"; };
+		D431DB231579BAC90096D203 /* WayPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WayPoint.m; sourceTree = "<group>"; };
+		D431DB481579DE0B0096D203 /* ModelTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelTypes.h; sourceTree = "<group>"; };
+		D431DB491579E8070096D203 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D431DB4B1579EB8F0096D203 /* CrumbPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrumbPath.h; sourceTree = "<group>"; };
+		D431DB4C1579EB900096D203 /* CrumbPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrumbPath.m; sourceTree = "<group>"; };
+		D431DB4D1579EB900096D203 /* CrumbPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrumbPathView.h; sourceTree = "<group>"; };
+		D431DB4E1579EB910096D203 /* CrumbPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrumbPathView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4233A141578EFD9009C3D03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D431DB4A1579E8070096D203 /* CoreLocation.framework in Frameworks */,
+				D431DAF91579A8530096D203 /* MapKit.framework in Frameworks */,
+				D4233A1C1578EFD9009C3D03 /* UIKit.framework in Frameworks */,
+				D4233A1E1578EFD9009C3D03 /* Foundation.framework in Frameworks */,
+				D4233A201578EFD9009C3D03 /* CoreGraphics.framework in Frameworks */,
+				D4233A221578EFD9009C3D03 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4233A3C1578EFDA009C3D03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4233A421578EFDA009C3D03 /* SenTestingKit.framework in Frameworks */,
+				D4233A431578EFDA009C3D03 /* UIKit.framework in Frameworks */,
+				D4233A441578EFDA009C3D03 /* Foundation.framework in Frameworks */,
+				D4233A451578EFDA009C3D03 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4233A0C1578EFD9009C3D03 = {
+			isa = PBXGroup;
+			children = (
+				D4233A231578EFD9009C3D03 /* WalkMyWay */,
+				D4233A481578EFDA009C3D03 /* WalkMyWayTests */,
+				D4233A1A1578EFD9009C3D03 /* Frameworks */,
+				D4233A181578EFD9009C3D03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4233A181578EFD9009C3D03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4233A171578EFD9009C3D03 /* WalkMyWay.app */,
+				D4233A401578EFDA009C3D03 /* WalkMyWayTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4233A1A1578EFD9009C3D03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D431DB491579E8070096D203 /* CoreLocation.framework */,
+				D431DAF81579A8530096D203 /* MapKit.framework */,
+				D4233A1B1578EFD9009C3D03 /* UIKit.framework */,
+				D4233A1D1578EFD9009C3D03 /* Foundation.framework */,
+				D4233A1F1578EFD9009C3D03 /* CoreGraphics.framework */,
+				D4233A211578EFD9009C3D03 /* CoreData.framework */,
+				D4233A411578EFDA009C3D03 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4233A231578EFD9009C3D03 /* WalkMyWay */ = {
+			isa = PBXGroup;
+			children = (
+				D431DB4B1579EB8F0096D203 /* CrumbPath.h */,
+				D431DB4C1579EB900096D203 /* CrumbPath.m */,
+				D431DB4D1579EB900096D203 /* CrumbPathView.h */,
+				D431DB4E1579EB910096D203 /* CrumbPathView.m */,
+				D431DB481579DE0B0096D203 /* ModelTypes.h */,
+				D4233A2C1578EFD9009C3D03 /* PBAppDelegate.h */,
+				D4233A2D1578EFD9009C3D03 /* PBAppDelegate.m */,
+				D4233A2F1578EFD9009C3D03 /* MainStoryboard.storyboard */,
+				D4233A351578EFD9009C3D03 /* PBMasterViewController.h */,
+				D4233A361578EFD9009C3D03 /* PBMasterViewController.m */,
+				D4233A381578EFD9009C3D03 /* PBDetailViewController.h */,
+				D4233A391578EFD9009C3D03 /* PBDetailViewController.m */,
+				D4233A321578EFD9009C3D03 /* WalkMyWay.xcdatamodeld */,
+				D431DB001579BAC60096D203 /* _Agency.h */,
+				D431DB011579BAC60096D203 /* _Agency.m */,
+				D431DB021579BAC60096D203 /* _Route.h */,
+				D431DB031579BAC70096D203 /* _Route.m */,
+				D431DB041579BAC70096D203 /* _ScheduledStop.h */,
+				D431DB051579BAC70096D203 /* _ScheduledStop.m */,
+				D431DB061579BAC70096D203 /* _Service.h */,
+				D431DB071579BAC70096D203 /* _Service.m */,
+				D431DB081579BAC70096D203 /* _ServiceException.h */,
+				D431DB091579BAC70096D203 /* _ServiceException.m */,
+				D431DB0A1579BAC70096D203 /* _Stop.h */,
+				D431DB0B1579BAC70096D203 /* _Stop.m */,
+				D431DB0C1579BAC70096D203 /* _Trip.h */,
+				D431DB0D1579BAC80096D203 /* _Trip.m */,
+				D431DB0E1579BAC80096D203 /* _TripMap.h */,
+				D431DB0F1579BAC80096D203 /* _TripMap.m */,
+				D431DB101579BAC80096D203 /* _WayPoint.h */,
+				D431DB111579BAC80096D203 /* _WayPoint.m */,
+				D431DB121579BAC80096D203 /* Agency.h */,
+				D431DB131579BAC80096D203 /* Agency.m */,
+				D431DB141579BAC80096D203 /* Route.h */,
+				D431DB151579BAC80096D203 /* Route.m */,
+				D431DB161579BAC90096D203 /* ScheduledStop.h */,
+				D431DB171579BAC90096D203 /* ScheduledStop.m */,
+				D431DB181579BAC90096D203 /* Service.h */,
+				D431DB191579BAC90096D203 /* Service.m */,
+				D431DB1A1579BAC90096D203 /* ServiceException.h */,
+				D431DB1B1579BAC90096D203 /* ServiceException.m */,
+				D431DB1C1579BAC90096D203 /* Stop.h */,
+				D431DB1D1579BAC90096D203 /* Stop.m */,
+				D431DB1E1579BAC90096D203 /* Trip.h */,
+				D431DB1F1579BAC90096D203 /* Trip.m */,
+				D431DB201579BAC90096D203 /* TripMap.h */,
+				D431DB211579BAC90096D203 /* TripMap.m */,
+				D431DB221579BAC90096D203 /* WayPoint.h */,
+				D431DB231579BAC90096D203 /* WayPoint.m */,
+				D4233A241578EFD9009C3D03 /* Supporting Files */,
+			);
+			path = WalkMyWay;
+			sourceTree = "<group>";
+		};
+		D4233A241578EFD9009C3D03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4233A251578EFD9009C3D03 /* WalkMyWay-Info.plist */,
+				D4233A261578EFD9009C3D03 /* InfoPlist.strings */,
+				D4233A291578EFD9009C3D03 /* main.m */,
+				D4233A2B1578EFD9009C3D03 /* WalkMyWay-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4233A481578EFDA009C3D03 /* WalkMyWayTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4233A4E1578EFDA009C3D03 /* WalkMyWayTests.h */,
+				D4233A4F1578EFDA009C3D03 /* WalkMyWayTests.m */,
+				D4233A491578EFDA009C3D03 /* Supporting Files */,
+			);
+			path = WalkMyWayTests;
+			sourceTree = "<group>";
+		};
+		D4233A491578EFDA009C3D03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4233A4A1578EFDA009C3D03 /* WalkMyWayTests-Info.plist */,
+				D4233A4B1578EFDA009C3D03 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4233A161578EFD9009C3D03 /* WalkMyWay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4233A531578EFDA009C3D03 /* Build configuration list for PBXNativeTarget "WalkMyWay" */;
+			buildPhases = (
+				D4233A131578EFD9009C3D03 /* Sources */,
+				D4233A141578EFD9009C3D03 /* Frameworks */,
+				D4233A151578EFD9009C3D03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WalkMyWay;
+			productName = WalkMyWay;
+			productReference = D4233A171578EFD9009C3D03 /* WalkMyWay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4233A3F1578EFDA009C3D03 /* WalkMyWayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4233A561578EFDA009C3D03 /* Build configuration list for PBXNativeTarget "WalkMyWayTests" */;
+			buildPhases = (
+				D4233A3B1578EFDA009C3D03 /* Sources */,
+				D4233A3C1578EFDA009C3D03 /* Frameworks */,
+				D4233A3D1578EFDA009C3D03 /* Resources */,
+				D4233A3E1578EFDA009C3D03 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4233A471578EFDA009C3D03 /* PBXTargetDependency */,
+			);
+			name = WalkMyWayTests;
+			productName = WalkMyWayTests;
+			productReference = D4233A401578EFDA009C3D03 /* WalkMyWayTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4233A0E1578EFD9009C3D03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PB;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Cordelta;
+			};
+			buildConfigurationList = D4233A111578EFD9009C3D03 /* Build configuration list for PBXProject "WalkMyWay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D4233A0C1578EFD9009C3D03;
+			productRefGroup = D4233A181578EFD9009C3D03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4233A161578EFD9009C3D03 /* WalkMyWay */,
+				D4233A3F1578EFDA009C3D03 /* WalkMyWayTests */,
+				D431DAFB1579B8EC0096D203 /* Mogenerator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4233A151578EFD9009C3D03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4233A281578EFD9009C3D03 /* InfoPlist.strings in Resources */,
+				D4233A311578EFD9009C3D03 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4233A3D1578EFDA009C3D03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4233A4D1578EFDA009C3D03 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4233A3E1578EFDA009C3D03 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		D431DAFF1579B9130096D203 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd WalkMyWay\n/usr/local/bin/mogenerator --template-var arc=true -m WalkMyWay.xcdatamodeld/WalkMyWay.xcdatamodel/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4233A131578EFD9009C3D03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4233A2A1578EFD9009C3D03 /* main.m in Sources */,
+				D4233A2E1578EFD9009C3D03 /* PBAppDelegate.m in Sources */,
+				D4233A341578EFD9009C3D03 /* WalkMyWay.xcdatamodeld in Sources */,
+				D4233A371578EFD9009C3D03 /* PBMasterViewController.m in Sources */,
+				D4233A3A1578EFD9009C3D03 /* PBDetailViewController.m in Sources */,
+				D431DB241579BACA0096D203 /* _Agency.m in Sources */,
+				D431DB261579BACA0096D203 /* _Route.m in Sources */,
+				D431DB281579BACA0096D203 /* _ScheduledStop.m in Sources */,
+				D431DB2A1579BACA0096D203 /* _Service.m in Sources */,
+				D431DB2C1579BACA0096D203 /* _ServiceException.m in Sources */,
+				D431DB2E1579BACA0096D203 /* _Stop.m in Sources */,
+				D431DB301579BACA0096D203 /* _Trip.m in Sources */,
+				D431DB321579BACA0096D203 /* _TripMap.m in Sources */,
+				D431DB341579BACA0096D203 /* _WayPoint.m in Sources */,
+				D431DB361579BACA0096D203 /* Agency.m in Sources */,
+				D431DB381579BACA0096D203 /* Route.m in Sources */,
+				D431DB3A1579BACA0096D203 /* ScheduledStop.m in Sources */,
+				D431DB3C1579BACA0096D203 /* Service.m in Sources */,
+				D431DB3E1579BACA0096D203 /* ServiceException.m in Sources */,
+				D431DB401579BACA0096D203 /* Stop.m in Sources */,
+				D431DB421579BACA0096D203 /* Trip.m in Sources */,
+				D431DB441579BACA0096D203 /* TripMap.m in Sources */,
+				D431DB461579BACA0096D203 /* WayPoint.m in Sources */,
+				D431DB4F1579EB910096D203 /* CrumbPath.m in Sources */,
+				D431DB511579EB910096D203 /* CrumbPathView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4233A3B1578EFDA009C3D03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4233A501578EFDA009C3D03 /* WalkMyWayTests.m in Sources */,
+				D431DB251579BACA0096D203 /* _Agency.m in Sources */,
+				D431DB271579BACA0096D203 /* _Route.m in Sources */,
+				D431DB291579BACA0096D203 /* _ScheduledStop.m in Sources */,
+				D431DB2B1579BACA0096D203 /* _Service.m in Sources */,
+				D431DB2D1579BACA0096D203 /* _ServiceException.m in Sources */,
+				D431DB2F1579BACA0096D203 /* _Stop.m in Sources */,
+				D431DB311579BACA0096D203 /* _Trip.m in Sources */,
+				D431DB331579BACA0096D203 /* _TripMap.m in Sources */,
+				D431DB351579BACA0096D203 /* _WayPoint.m in Sources */,
+				D431DB371579BACA0096D203 /* Agency.m in Sources */,
+				D431DB391579BACA0096D203 /* Route.m in Sources */,
+				D431DB3B1579BACA0096D203 /* ScheduledStop.m in Sources */,
+				D431DB3D1579BACA0096D203 /* Service.m in Sources */,
+				D431DB3F1579BACA0096D203 /* ServiceException.m in Sources */,
+				D431DB411579BACA0096D203 /* Stop.m in Sources */,
+				D431DB431579BACA0096D203 /* Trip.m in Sources */,
+				D431DB451579BACA0096D203 /* TripMap.m in Sources */,
+				D431DB471579BACA0096D203 /* WayPoint.m in Sources */,
+				D431DB501579EB910096D203 /* CrumbPath.m in Sources */,
+				D431DB521579EB910096D203 /* CrumbPathView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4233A471578EFDA009C3D03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4233A161578EFD9009C3D03 /* WalkMyWay */;
+			targetProxy = D4233A461578EFDA009C3D03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4233A261578EFD9009C3D03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4233A271578EFD9009C3D03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D4233A2F1578EFD9009C3D03 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4233A301578EFD9009C3D03 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		D4233A4B1578EFDA009C3D03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4233A4C1578EFDA009C3D03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4233A511578EFDA009C3D03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D4233A521578EFDA009C3D03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4233A541578EFDA009C3D03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WalkMyWay/WalkMyWay-Prefix.pch";
+				INFOPLIST_FILE = "WalkMyWay/WalkMyWay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D4233A551578EFDA009C3D03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WalkMyWay/WalkMyWay-Prefix.pch";
+				INFOPLIST_FILE = "WalkMyWay/WalkMyWay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D4233A571578EFDA009C3D03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WalkMyWay.app/WalkMyWay";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WalkMyWay/WalkMyWay-Prefix.pch";
+				INFOPLIST_FILE = "WalkMyWayTests/WalkMyWayTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D4233A581578EFDA009C3D03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WalkMyWay.app/WalkMyWay";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WalkMyWay/WalkMyWay-Prefix.pch";
+				INFOPLIST_FILE = "WalkMyWayTests/WalkMyWayTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		D431DAFD1579B8EC0096D203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D431DAFE1579B8EC0096D203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4233A111578EFD9009C3D03 /* Build configuration list for PBXProject "WalkMyWay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4233A511578EFDA009C3D03 /* Debug */,
+				D4233A521578EFDA009C3D03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4233A531578EFDA009C3D03 /* Build configuration list for PBXNativeTarget "WalkMyWay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4233A541578EFDA009C3D03 /* Debug */,
+				D4233A551578EFDA009C3D03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4233A561578EFDA009C3D03 /* Build configuration list for PBXNativeTarget "WalkMyWayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4233A571578EFDA009C3D03 /* Debug */,
+				D4233A581578EFDA009C3D03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D431DAFC1579B8EC0096D203 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D431DAFD1579B8EC0096D203 /* Debug */,
+				D431DAFE1579B8EC0096D203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D4233A321578EFD9009C3D03 /* WalkMyWay.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D4233A331578EFD9009C3D03 /* WalkMyWay.xcdatamodel */,
+			);
+			currentVersion = D4233A331578EFD9009C3D03 /* WalkMyWay.xcdatamodel */;
+			path = WalkMyWay.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D4233A0E1578EFD9009C3D03 /* Project object */;
+}

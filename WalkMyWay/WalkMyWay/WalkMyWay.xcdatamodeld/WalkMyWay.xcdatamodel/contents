@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Agency" representedClassName="Agency" syncable="YES">
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timezone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Route" representedClassName="Route" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="trips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trip" inverseName="route" inverseEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="ScheduledStop" representedClassName="ScheduledStop" syncable="YES">
+        <attribute name="arrivalTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departureTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sequenceNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="stop" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Stop" inverseName="scheduledStops" inverseEntity="Stop" syncable="YES"/>
+        <relationship name="trip" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="scheduledStops" inverseEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="Service" representedClassName="Service" syncable="YES">
+        <attribute name="fridays" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="mondays" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="saturdays" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sundays" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="thursdays" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tuesdays" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wednesdays" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="exceptions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ServiceException" inverseName="service" inverseEntity="ServiceException" syncable="YES"/>
+        <relationship name="trips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trip" inverseName="service" inverseEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="ServiceException" representedClassName="ServiceException" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="inclusion" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="service" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Service" inverseName="exceptions" inverseEntity="Service" syncable="YES"/>
+    </entity>
+    <entity name="Stop" representedClassName="Stop" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="scheduledStops" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScheduledStop" inverseName="stop" inverseEntity="ScheduledStop" syncable="YES"/>
+    </entity>
+    <entity name="Trip" representedClassName="Trip" syncable="YES">
+        <relationship name="map" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TripMap" inverseName="trips" inverseEntity="TripMap" syncable="YES"/>
+        <relationship name="route" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Route" inverseName="trips" inverseEntity="Route" syncable="YES"/>
+        <relationship name="scheduledStops" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScheduledStop" inverseName="trip" inverseEntity="ScheduledStop" syncable="YES"/>
+        <relationship name="service" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Service" inverseName="trips" inverseEntity="Service" syncable="YES"/>
+    </entity>
+    <entity name="TripMap" representedClassName="TripMap" syncable="YES">
+        <relationship name="points" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WayPoint" inverseName="map" inverseEntity="WayPoint" syncable="YES"/>
+        <relationship name="trips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trip" inverseName="map" inverseEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="WayPoint" representedClassName="WayPoint" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="sequenceNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="map" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TripMap" inverseName="points" inverseEntity="TripMap" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Agency" positionX="178" positionY="117" width="128" height="120"/>
+        <element name="Service" positionX="-9" positionY="-243" width="128" height="180"/>
+        <element name="ServiceException" positionX="214" positionY="-18" width="128" height="90"/>
+        <element name="Route" positionX="72" positionY="-135" width="128" height="75"/>
+        <element name="ScheduledStop" positionX="-38" positionY="336" width="128" height="120"/>
+        <element name="TripMap" positionX="-533" positionY="36" width="128" height="75"/>
+        <element name="Stop" positionX="-353" positionY="174" width="128" height="105"/>
+        <element name="Trip" positionX="-270" positionY="-45" width="128" height="105"/>
+        <element name="WayPoint" positionX="-515" positionY="-153" width="128" height="105"/>
+    </elements>
+</model>
