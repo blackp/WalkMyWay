@@ -91,7 +91,7 @@
     NSTimeInterval busDeparts = [scheduledStop secondsUntilDeparture];
     NSTimeInterval weArrive = d / velocity;
 
-    if (busDeparts - weArrive > -180) {
+    if ((busDeparts - weArrive) > -180) {
         NSLog(@"Might make it to '%@' (%.0fm) in %.0f seconds", stop.name, d, weArrive);
     }
     

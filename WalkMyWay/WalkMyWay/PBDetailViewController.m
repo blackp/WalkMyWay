@@ -131,6 +131,8 @@
 {
     //NSLog(@"Updated location");
     
+    currentLocation = newLocation;
+    
     if (!recordingLocation) {
         return;
     }
@@ -335,7 +337,7 @@
 
 - (void)mapView:(MKMapView *)mv annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    NSLog(@"Annotation callout!");
+    //NSLog(@"Annotation callout!");
     
     NSArray *potentialTrips = [filteredTrips allObjects];
     Trip *trip;
@@ -350,13 +352,28 @@
         }
     }
     
-    NSLog(@"Found %d scheduled stops (%d final) for %d trips", stops.count, finalStops.count, filteredTrips.count);
+    //NSLog(@"Found %d scheduled stops (%d final) for %d trips", stops.count, finalStops.count, filteredTrips.count);
 
+    
+    
     potentialTrips = [filteredTrips allObjects];
+    Trip *nextTrip;
+    NSTimeInterval nextArrival = 100000;
     if (potentialTrips.count > 0) {
         trip = [potentialTrips objectAtIndex:0];
-        NSLog(@"Tripp: %@", trip.route.name);
-        tripMap = [[PBTripMap alloc] initWithTrip:trip];
+        Stop *closestStop = [trip closestStopTo:currentLocation];
+        NSLog(@"Closest stop at %@", closestStop.name);
+        for (NSInteger i = 0; i < potentialTrips.count; i += 1) {
+            trip = [potentialTrips objectAtIndex:i];
+            ScheduledStop *scheduledStop = [trip scheduledStopFor:closestStop];
+            NSTimeInterval secondsUntilDeparture = [scheduledStop secondsUntilDeparture];
+            if (secondsUntilDeparture > 60 && secondsUntilDeparture < nextArrival) {
+                nextTrip = trip;
+                nextArrival = [scheduledStop secondsUntilDeparture];
+                NSLog(@"Seconds until departure: %.2f", [scheduledStop secondsUntilDeparture]);
+            }
+        }
+        tripMap = [[PBTripMap alloc] initWithTrip:nextTrip];
         walkableStops = [[PBWalkableStops alloc] initWithTrip:trip];
         [mapView addOverlay:walkableStops];
     }
