@@ -22,6 +22,8 @@
           zoomScale:(MKZoomScale)zoomScale
           inContext:(CGContextRef)context
 {
+    //NSLog(@"Draw Trip MapRect at scale %f", zoomScale);
+    
     PBTripMap *pbTripMap = (PBTripMap *)(self.overlay);
     
     CGFloat lineWidth = MKRoadWidthAtZoomScale(zoomScale);
@@ -63,6 +65,38 @@ static BOOL lineIntersectsRect(MKMapPoint p0, MKMapPoint p1, MKMapRect r)
 }
 
 #define MIN_POINT_DELTA 5.0
+
+- (CGPathRef)bruteNewPathForPoints:(MKMapPoint *)points
+                        pointCount:(NSUInteger)pointCount
+                          clipRect:(MKMapRect)mapRect
+                         zoomScale:(MKZoomScale)zoomScale
+{
+    if (pointCount < 2)
+        return NULL;
+    
+    CGMutablePathRef path = NULL;
+    
+    MKMapPoint point, lastPoint = points[0];
+    NSUInteger i;
+    for (i = 1; i < pointCount - 1; i++)
+    {
+        point = points[i];
+        if (!path) 
+        {
+            path = CGPathCreateMutable();
+            CGPoint lastCGPoint = [self pointForMapPoint:lastPoint];
+            CGPathMoveToPoint(path, NULL, lastCGPoint.x, lastCGPoint.y);
+        }
+
+        CGPoint cgPoint = [self pointForMapPoint:point];
+        CGPathAddLineToPoint(path, NULL, cgPoint.x, cgPoint.y);
+        lastPoint = point;
+    }
+
+    //NSLog(@"New path for %d points at scale %f", pointCount, zoomScale);
+    return path;
+}
+
 
 - (CGPathRef)newPathForPoints:(MKMapPoint *)points
                    pointCount:(NSUInteger)pointCount

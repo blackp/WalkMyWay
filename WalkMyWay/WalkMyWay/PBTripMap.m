@@ -61,6 +61,7 @@
 
 - (void)dealloc
 {
+    NSLog(@"We're Free!");
     free(points);
     free(stops);
 }

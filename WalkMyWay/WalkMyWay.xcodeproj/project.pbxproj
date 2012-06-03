@@ -83,6 +83,8 @@
 		D4C22A4F157A1CD7000B251C /* PBFinalStopAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C22A4E157A1CD7000B251C /* PBFinalStopAnnotation.m */; };
 		D4C22A53157A2D0C000B251C /* PBTripMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C22A52157A2D0C000B251C /* PBTripMapView.m */; };
 		D4C22A56157A2D8F000B251C /* PBTripMap.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C22A55157A2D8F000B251C /* PBTripMap.m */; };
+		D4C22A5C157AC9B9000B251C /* PBWalkableStopsView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C22A59157AC9B8000B251C /* PBWalkableStopsView.m */; };
+		D4C22A5D157AC9B9000B251C /* PBWalkableStops.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C22A5A157AC9B8000B251C /* PBWalkableStops.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +170,11 @@
 		D4C22A52157A2D0C000B251C /* PBTripMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBTripMapView.m; sourceTree = "<group>"; };
 		D4C22A54157A2D8F000B251C /* PBTripMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBTripMap.h; sourceTree = "<group>"; };
 		D4C22A55157A2D8F000B251C /* PBTripMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBTripMap.m; sourceTree = "<group>"; };
+		D4C22A57157A4E3E000B251C /* SampleWalk.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = SampleWalk.gpx; path = Resources/SampleWalk.gpx; sourceTree = "<group>"; };
+		D4C22A58157AC9B8000B251C /* PBWalkableStopsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWalkableStopsView.h; sourceTree = "<group>"; };
+		D4C22A59157AC9B8000B251C /* PBWalkableStopsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBWalkableStopsView.m; sourceTree = "<group>"; };
+		D4C22A5A157AC9B8000B251C /* PBWalkableStops.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBWalkableStops.m; sourceTree = "<group>"; };
+		D4C22A5B157AC9B8000B251C /* PBWalkableStops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWalkableStops.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +208,7 @@
 		D4233A0C1578EFD9009C3D03 = {
 			isa = PBXGroup;
 			children = (
+				D4C22A57157A4E3E000B251C /* SampleWalk.gpx */,
 				D4233A231578EFD9009C3D03 /* WalkMyWay */,
 				D4233A481578EFDA009C3D03 /* WalkMyWayTests */,
 				D4233A1A1578EFD9009C3D03 /* Frameworks */,
@@ -236,6 +244,10 @@
 			children = (
 				D4C22A54157A2D8F000B251C /* PBTripMap.h */,
 				D4C22A55157A2D8F000B251C /* PBTripMap.m */,
+				D4C22A58157AC9B8000B251C /* PBWalkableStopsView.h */,
+				D4C22A59157AC9B8000B251C /* PBWalkableStopsView.m */,
+				D4C22A5A157AC9B8000B251C /* PBWalkableStops.m */,
+				D4C22A5B157AC9B8000B251C /* PBWalkableStops.h */,
 				D431DB4B1579EB8F0096D203 /* CrumbPath.h */,
 				D431DB4C1579EB900096D203 /* CrumbPath.m */,
 				D4C22A51157A2D0C000B251C /* PBTripMapView.h */,
@@ -474,6 +486,8 @@
 				D4C22A4F157A1CD7000B251C /* PBFinalStopAnnotation.m in Sources */,
 				D4C22A53157A2D0C000B251C /* PBTripMapView.m in Sources */,
 				D4C22A56157A2D8F000B251C /* PBTripMap.m in Sources */,
+				D4C22A5C157AC9B9000B251C /* PBWalkableStopsView.m in Sources */,
+				D4C22A5D157AC9B9000B251C /* PBWalkableStops.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

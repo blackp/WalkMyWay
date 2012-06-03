@@ -118,6 +118,9 @@
     //NSPredicate *onSundays = [NSPredicate predicateWithFormat:@"1 IN trips.service.sundays"];
     //[fetchRequest setPredicate:onSundays];
     
+    NSPredicate *niceRoutes = [NSPredicate predicateWithFormat:@"name = '2' OR name = '6' OR name = '8'"];
+    [fetchRequest setPredicate:niceRoutes];
+    
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
         

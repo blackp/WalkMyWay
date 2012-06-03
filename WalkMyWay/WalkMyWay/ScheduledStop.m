@@ -4,4 +4,9 @@
 
 // Custom logic goes here.
 
+- (NSTimeInterval) secondsUntilDeparture
+{
+    return 600;
+}
+
 @end

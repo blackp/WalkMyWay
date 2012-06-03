@@ -13,6 +13,8 @@
 #import "CrumbPathView.h"
 #import "PBTripMap.h"
 #import "PBTripMapView.h"
+#import "PBWalkableStops.h"
+#import "PBWalkableStopsView.h"
 
 @interface PBDetailViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -22,6 +24,8 @@
     CrumbPathView *crumbView;
     PBTripMap *tripMap;
     PBTripMapView *tripMapView;
+    PBWalkableStops *walkableStops;
+    PBWalkableStopsView *walkableStopsView;
     BOOL recordingLocation;
     NSMutableSet *stops;
     NSMutableSet *finalStops;
@@ -31,8 +35,6 @@
 
 @property (strong, nonatomic) Route *detailItem;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
-
 
 @property (strong) CLLocationManager *locationManager;
 @property (strong) CLLocation *currentLocation;

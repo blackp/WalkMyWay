@@ -134,7 +134,7 @@
     if (!recordingLocation) {
         return;
     }
-    
+        
     if (!crumbs) {
         crumbs = [[CrumbPath alloc] initWithCenterCoordinate:newLocation.coordinate];
         [mapView addOverlay:crumbs];
@@ -151,9 +151,11 @@
             updateRect = MKMapRectInset(updateRect, -lineWidth, -lineWidth);
             // Ask the overlay view to update just the changed area.
             [crumbView setNeedsDisplayInMapRect:updateRect];
+            walkableStops.currentLocation = newLocation;
+            [walkableStopsView setNeedsDisplayInMapRect:walkableStops.boundingMapRect];
         }
         
-        [self updateMapRegionIfRequired];
+        //[self updateMapRegionIfRequired];
     }
 }
 
@@ -260,6 +262,13 @@
     
 }
 
+- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
+{
+    NSLog(@"Region will change");
+    if (tripMapView) {
+        [tripMapView setNeedsDisplayInMapRect:tripMap.boundingMapRect];
+    }
+}
 
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
@@ -269,6 +278,14 @@
             tripMapView = [[PBTripMapView alloc] initWithOverlay:overlay];
         }
         return tripMapView;
+    }
+    
+    
+    if ([overlay isKindOfClass:[PBWalkableStops class]]) {
+        if (!walkableStopsView) {
+            walkableStopsView = [[PBWalkableStopsView alloc] initWithOverlay:overlay];
+        }
+        return walkableStopsView;
     }
     
     if ([overlay isKindOfClass:[CrumbPath class]]) {
@@ -340,11 +357,13 @@
         trip = [potentialTrips objectAtIndex:0];
         NSLog(@"Tripp: %@", trip.route.name);
         tripMap = [[PBTripMap alloc] initWithTrip:trip];
-        [mapView addOverlay:tripMap];
+        walkableStops = [[PBWalkableStops alloc] initWithTrip:trip];
+        [mapView addOverlay:walkableStops];
     }
-
+    
     [mapView removeAnnotations: finalStopAnnotations];
     
+    recordingLocation = TRUE;
 }
     
 @end
