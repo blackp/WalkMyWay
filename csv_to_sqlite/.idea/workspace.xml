@@ -33,11 +33,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sqlite_to_coredata.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sqlite_to_coredata.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sqlite_to_coredata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="64" selection-start="6365" selection-end="6365" vertical-scroll-proportion="0.86470586">
+            <state line="122" column="64" selection-start="6365" selection-end="6365" vertical-scroll-proportion="-28.26923">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="expand_waypoints.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/expand_waypoints.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="26" selection-start="346" selection-end="346" vertical-scroll-proportion="0.2739726">
+              <folding>
+                <element signature="e#23#33#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,6 +65,7 @@
       <list>
         <option value="$PROJECT_DIR$/csv_to_sqlite.py" />
         <option value="$PROJECT_DIR$/sqlite_to_coredata.py" />
+        <option value="$PROJECT_DIR$/expand_waypoints.py" />
       </list>
     </option>
   </component>
@@ -231,7 +243,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17983651" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17983651" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -308,8 +320,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sqlite_to_coredata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="64" selection-start="6365" selection-end="6365" vertical-scroll-proportion="0.86470586">
+        <state line="122" column="64" selection-start="6365" selection-end="6365" vertical-scroll-proportion="-28.26923">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expand_waypoints.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="26" selection-start="346" selection-end="346" vertical-scroll-proportion="0.2739726">
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
